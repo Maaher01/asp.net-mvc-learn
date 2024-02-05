@@ -1,0 +1,12 @@
+D:\C#_Projects\Product Management System\Product Management System\Admin Portal\bin\Debug\Admin Portal.exe.config
+D:\C#_Projects\Product Management System\Product Management System\Admin Portal\bin\Debug\Admin Portal.exe
+D:\C#_Projects\Product Management System\Product Management System\Admin Portal\bin\Debug\Admin Portal.pdb
+D:\C#_Projects\Product Management System\Product Management System\Admin Portal\bin\Debug\EntityFramework.dll
+D:\C#_Projects\Product Management System\Product Management System\Admin Portal\bin\Debug\EntityFramework.SqlServer.dll
+D:\C#_Projects\Product Management System\Product Management System\Admin Portal\bin\Debug\EntityFramework.xml
+D:\C#_Projects\Product Management System\Product Management System\Admin Portal\bin\Debug\EntityFramework.SqlServer.xml
+D:\C#_Projects\Product Management System\Product Management System\Admin Portal\obj\Debug\Admin Portal.csproj.AssemblyReference.cache
+D:\C#_Projects\Product Management System\Product Management System\Admin Portal\obj\Debug\Admin Portal.csproj.CoreCompileInputs.cache
+D:\C#_Projects\Product Management System\Product Management System\Admin Portal\obj\Debug\Admin Portal.csproj.CopyComplete
+D:\C#_Projects\Product Management System\Product Management System\Admin Portal\obj\Debug\Admin Portal.exe
+D:\C#_Projects\Product Management System\Product Management System\Admin Portal\obj\Debug\Admin Portal.pdb

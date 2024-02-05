@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Day_07_Work_01.Models.Product>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>All Products</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var x in Model)
+        {
+            <tr>
+                <td>@x.Name</td>
+                <td>@x.Price.ToString("0.00")</td>
+            </tr>
+        }
+    </tbody>
+</table>

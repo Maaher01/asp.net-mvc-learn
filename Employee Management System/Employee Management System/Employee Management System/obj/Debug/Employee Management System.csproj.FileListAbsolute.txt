@@ -1,0 +1,7 @@
+D:\C#_Projects\Employee Management System\Employee Management System\Employee Management System\bin\Debug\Employee Management System.exe.config
+D:\C#_Projects\Employee Management System\Employee Management System\Employee Management System\bin\Debug\Employee Management System.exe
+D:\C#_Projects\Employee Management System\Employee Management System\Employee Management System\bin\Debug\Employee Management System.pdb
+D:\C#_Projects\Employee Management System\Employee Management System\Employee Management System\obj\Debug\Employee Management System.csproj.AssemblyReference.cache
+D:\C#_Projects\Employee Management System\Employee Management System\Employee Management System\obj\Debug\Employee Management System.csproj.CoreCompileInputs.cache
+D:\C#_Projects\Employee Management System\Employee Management System\Employee Management System\obj\Debug\Employee Management System.exe
+D:\C#_Projects\Employee Management System\Employee Management System\Employee Management System\obj\Debug\Employee Management System.pdb

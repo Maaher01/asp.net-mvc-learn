@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@Html.ActionLink("Test1", "Test1", "Test", new { id = 20 }, new { @class= "btn btn-primary btn-sm" })
+<form action="@Url.Action("Test2", "Test")" method="post">
+    <input name="x" />
+    <br />
+    <input name="x" />
+    <br />
+    <input name="x" />
+    <br />
+    <button class="btn btn-primary">Save</button>
+</form>
+<form action="@Url.Action("Test3", "Test")" method="post">
+    <input name="Name" />
+    <br />
+    <input name="Age" />
+    <br />
+    <button class="btn btn-primary">Save</button>
+</form>

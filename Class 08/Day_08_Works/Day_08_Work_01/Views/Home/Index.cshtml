@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Day_08_Work_01.Models.Category>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h2>All Categories</h2>
+        <div class="d-flex justify-content-end mb-1">
+           @Html.ActionLink("+ New Category", "Create", "Home", new {}, new {@class= "btn btn-primary btn-md" })
+        </div>
+
+        <table class="table table-bordered table-striped">
+            <thead class="table-light">
+                <tr>
+                    <th>Category Name</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var c in Model)
+            {
+                <tr>
+                    <td>@c.CategoryName</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "Home", new {id=c.CategoryId}, new {@class= "btn btn-success btn-sm" })
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

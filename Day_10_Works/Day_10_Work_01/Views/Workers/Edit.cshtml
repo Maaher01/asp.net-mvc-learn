@@ -1,0 +1,26 @@
+﻿@model Day_10_Work_01.ViewModels.Input.WorkerEditModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div id="alert"></div>
+        @Html.Partial("_EditForm")
+    </div>
+    <div class="col-12">
+        @Html.ActionLink("Back to list", "Index")
+    </div>
+</div>
+@section scripts
+{
+    <script src="~/Scripts/jquery-3.7.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script>
+        function onSuccess() {
+            $('#formEdit').trigger('reset')
+        }
+    </script>
+}

@@ -1,0 +1,64 @@
+﻿@model Day_10_Work_01.ViewModels.Input.WorkerEditModel
+
+<h3 class="offset-2 mb-4 mt-3">Edit Worker</h3>
+@using (Ajax.BeginForm("Edit", "Workers", new { }, new AjaxOptions { HttpMethod="post", InsertionMode=InsertionMode.InsertAfter, OnSuccess="onSuccess", UpdateTargetId="alert" }, new { enctype = "multipart/form-data", id="formEdit" }))
+{
+    @Html.HiddenFor(x => x.WorkerId)
+    <div class="form-group row mb-3">
+        @Html.LabelFor(x => x.Name, new { @class = "col-form-label col-2 text-end" })
+        <div class="col-4">
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger", style = "font-size:small" })
+        </div>
+    </div>
+    <div class="mb-3 offset-2">
+        <img style="width:125px" class="img-thumbnail" src="~/Pictures/@ViewBag.CurrentPic" />
+    </div>
+    <div class="form-group row mb-3">
+        @Html.LabelFor(x => x.Picture, new { @class = "col-form-label col-2 text-end" })
+        <div class="col-4">
+            @Html.TextBoxFor(x => x.Picture, new { @class = "form-control", type = "file" })
+            @Html.ValidationMessageFor(x => x.Picture, "", new { @class = "text-danger", style = "font-size:small" })
+        </div>
+    </div>
+    <div class="form-group row mb-3">
+        @Html.LabelFor(x => x.Trade, new { @class = "col-form-label col-2 text-end" })
+        <div class="col-4">
+            @Html.EnumDropDownListFor(x => x.Trade, new { @class = "form-select" })
+            @Html.ValidationMessageFor(x => x.Trade, "", new { @class = "text-danger", style = "font-size:small" })
+        </div>
+    </div>
+    <div class="form-group row mb-3">
+        @Html.LabelFor(x => x.Contact, new { @class = "col-form-label col-2 text-end" })
+        <div class="col-4">
+            @Html.TextBoxFor(x => x.Contact, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Contact, "", new { @class = "text-danger", style = "font-size:small" })
+        </div>
+    </div>
+    <div class="form-group row mb-3">
+        @Html.LabelFor(x => x.PayRate, new { @class = "col-form-label col-2 text-end" })
+        <div class="col-4">
+            @Html.TextBoxFor(x => x.PayRate, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.PayRate, "", new { @class = "text-danger", style = "font-size:small" })
+        </div>
+    </div>
+    <div class="form-group row mb-3">
+        @Html.LabelFor(x => x.StartDate, new { @class = "col-form-label col-2 text-end" })
+        <div class="col-4">
+            @Html.TextBoxFor(x => x.StartDate, new { @class = "form-control", type = "date", @Value = DateTime.Today.ToString("yyyy-MM-dd") })
+            @Html.ValidationMessageFor(x => x.StartDate, "", new { @class = "text-danger", style = "font-size:small" })
+        </div>
+    </div>
+    <div class="form-group row mb-3">
+        @Html.LabelFor(x => x.EndDate, new { @class = "col-form-label col-2 text-end" })
+        <div class="col-4">
+            @Html.TextBoxFor(x => x.EndDate, new { @class = "form-control", type = "date", })
+            @Html.ValidationMessageFor(x => x.EndDate, "", new { @class = "text-danger", style = "font-size:small" })
+        </div>
+    </div>
+    <div class="form-group row mb-3">
+        <div class="col-4 offset-2">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </div>
+}

@@ -1,0 +1,47 @@
+﻿@model Day_10_Work_01.Models.Worker
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h3 class="mb-4">Are you sure you want to delete this entry?</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="row mb-4">
+            <img src="~/Pictures/@Model.Picture" class="img-thumbnail" style="width: 125px" />
+        </div>
+        <div class="row mb-3">
+            <div class="col-2">@Html.DisplayNameFor(x => x.Name)</div>
+            <div class="col-10">@Html.DisplayFor(x => x.Name)</div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2">@Html.DisplayNameFor(x => x.Contact)</div>
+            <div class="col-10">@Html.DisplayFor(x => x.Contact)</div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2">@Html.DisplayNameFor(x => x.Trade)</div>
+            <div class="col-10">@Html.DisplayFor(x => x.Trade)</div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2">@Html.DisplayNameFor(x => x.PayRate)</div>
+            <div class="col-10">@Html.DisplayFor(x => x.PayRate)</div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2">@Html.DisplayNameFor(x => x.StartDate)</div>
+            <div class="col-10">@Html.DisplayFor(x => x.StartDate)</div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2">@Html.DisplayNameFor(x => x.EndDate)</div>
+            <div class="col-10">@Html.DisplayFor(x => x.EndDate)</div>
+        </div>
+        <div class="row mb-5">
+            @using(Html.BeginForm("Delete", "Workers", FormMethod.Post, new { id=Model.WorkerId }))
+            {
+                <button class="btn btn-danger" type="submit">Delete</button>
+            }
+        </div>
+    </div>
+</div>

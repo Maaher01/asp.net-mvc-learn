@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Day_10_Work_01.ViewModels.WorkerViewModel>
+
+<table class="table table-bordered">
+    <thead class="table-light">
+        <tr>
+            <th></th>
+            <th class="text-center align-middle">@Html.DisplayNameFor(x => x.Name)</th>
+            <th class="text-center align-middle">@Html.DisplayNameFor(x => x.Contact)</th>
+            <th class="text-center align-middle">@Html.DisplayNameFor(x => x.Trade)</th>
+            <th class="text-center align-middle">@Html.DisplayNameFor(x => x.PayRate)</th>
+            <th class="text-center align-middle">@Html.DisplayNameFor(x => x.StartDate)</th>
+            <th class="text-center align-middle">@Html.DisplayNameFor(x => x.EndDate)</th>
+            <th class="text-center align-middle">@Html.DisplayNameFor(x => x.DaysWorked)</th>
+            <th class="text-center align-middle">@Html.DisplayNameFor(x => x.Payment)</th>
+            <th class="text-center align-middle">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var w in Model)
+        {
+            <tr id="worker_@w.WorkerId">
+                <td style="width:110px" class="text-center">
+                    <img style="width:100px" src="~/Pictures/@w.Picture" />
+                </td>
+                <td class="text-center align-middle">@w.Name</td>
+                <td class="text-center align-middle">@w.Contact</td>
+                <td class="text-center align-middle">@w.Trade</td>
+                <td class="text-center align-middle">@Html.DisplayFor(x => w.PayRate)</td>
+                <td class="text-center align-middle">@Html.DisplayFor(x => w.StartDate)</td>
+                <td class="text-center align-middle">@Html.DisplayFor(x => w.EndDate)</td>
+                <td class="text-center align-middle">@w.DaysWorked</td>
+                <td class="text-center align-middle">@Html.DisplayFor(x => w.Payment)</td>
+                <td class="text-center align-middle">
+                    <a class="btn btn-success btn-sm" href="@Url.Action("Edit", "Workers", new {id=w.WorkerId})"><i class="bi bi-pencil"></i></a>
+                    <button class="btn btn-danger btn-sm del" data-pk="@w.WorkerId"><i class="bi bi-trash"></i></button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="d-flex justify-content-center">
+    <ul class="pagination">
+        @if (ViewBag.Current > 1)
+        {
+            <li class="page-item">
+                @Ajax.ActionLink("Prev", "GetWorkersTable", new { page = ViewBag.Current -1 }, new AjaxOptions { HttpMethod="get", UpdateTargetId="tableDiv", InsertionMode=InsertionMode.Replace, LoadingElementId="spinner" }, new { @class="page-link" })
+            </li>
+        }
+        @for (var i = 1; i <= ViewBag.PageCount; i++)
+        {
+            if (i == ViewBag.Current)
+            {
+                <li class="page-item active">
+                    <span class="page-link">@i</span>
+                </li>
+            }
+            else
+            {
+                <li class="page-item">
+                    @Ajax.ActionLink(i.ToString(), "GetWorkersTable", new { page = i }, new AjaxOptions { HttpMethod="get", UpdateTargetId = "tableDiv", InsertionMode=InsertionMode.Replace, LoadingElementId = "spinner" },new { @class = "page-link" })
+                </li>
+            }
+        }
+        @if (ViewBag.Current < ViewBag.PageCount)
+        {
+            <li class="page-item">
+                @Ajax.ActionLink("Next", "GetWorkersTable", new { page = ViewBag.Current + 1 }, new AjaxOptions { HttpMethod = "get", UpdateTargetId = "tableDiv", InsertionMode = InsertionMode.Replace, LoadingElementId = "spinner" }, new { @class = "page-link" })
+            </li>
+        }
+    </ul>
+</div>
